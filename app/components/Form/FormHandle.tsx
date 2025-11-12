@@ -1,7 +1,13 @@
 "use client";
-import { FormProvider, useForm } from 'react-hook-form'
+import { ReactNode } from 'react';
+import { FieldValue, FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 
-const FormHandle = ({ onSubmit, children }) => {
+type TProps = {
+    onSubmit: SubmitHandler<any>;
+    children: ReactNode;
+}
+
+const FormHandle = ({ onSubmit, children }: TProps) => {
     const methods = useForm();
     return (
         <FormProvider {...methods}>

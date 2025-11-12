@@ -9,7 +9,7 @@ const Page = () => {
   return (
     <FormHandle onSubmit={onsubmit}>
       <div>
-        <FormInput type='text' name='name'></FormInput>
+        <FormInput type='text' name='name' label="Name"></FormInput>
       </div>
       <div>
         <button type='submit'>Login</button>
