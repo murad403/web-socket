@@ -12,7 +12,10 @@ const FormInput = ({ type, name, label }: TProps) => {
     return (
         <>
             <label>{label ? label : null}</label>
-            <Controller control={control} name={name} render={({ field }) => <input {...field} type={type} id={name} className='py-2 px-4 outline-none border border-blue-500 appearance-none' />} />
+            <Controller control={control} name={name} render={({ field, fieldState: { error } }) => (
+                <input {...field} type={type} id={name} className='py-2 px-4 outline-none border border-blue-500 appearance-none' />
+                
+    )} />
             {/* <input type={type} className='py-2 px-4 outline-none border border-blue-500 appearance-none' {...register(name)}/> */}
         </>
     )
