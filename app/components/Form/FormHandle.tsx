@@ -18,9 +18,13 @@ const FormHandle = ({ onSubmit, children, resolver }: TProps) => {
         formConfig["resolver"] = resolver
     }
     const methods = useForm(formConfig);
+    const submit = (data) =>{
+        onSubmit(data);
+        methods.reset();
+    }
     return (
         <FormProvider {...methods}>
-            <form onSubmit={methods.handleSubmit(onSubmit)}>
+            <form onSubmit={methods.handleSubmit(submit)}>
                 {
                     children
                 }
