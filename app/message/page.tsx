@@ -6,9 +6,11 @@ import Link from 'next/link'
 const Message = () => {
     return (
         <div className='flex justify-center items-center h-screen bg-gray-200'>
-            <div className='w-1/3 h-[70%] bg-white rounded-xl p-5 overflow-y-scroll'>
-                <input type="search" className='w-full outline-none border border-gray-400 rounded-xl py-3 px-4' placeholder='search' />
-                <div className='flex flex-col gap-2 mt-5 '>
+            <div className='w-1/3 h-[70%] bg-white rounded-xl overflow-y-scroll'>
+                <div className='sticky top-0 bg-white p-4'>
+                    <input type="search" className='w-full outline-none border border-gray-400 rounded-xl py-3 px-4 ' placeholder='search' />
+                </div>
+                <div className='flex flex-col gap-2 mt-5 px-4'>
                     {
                         users.map(user =>
                             <Link href={`/message/${user?.id}`} className='bg-gray-50 flex items-center gap-4 p-2 rounded-xl' key={user.id}>
